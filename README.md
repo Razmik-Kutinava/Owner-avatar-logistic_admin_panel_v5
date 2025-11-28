@@ -1,43 +1,28 @@
 # Logistics Platform
 
-Платформа для управления логистикой с поддержкой водителей, устройств, зон, адресов, заказов, маршрутов, алертов и активности.
+Платформа управления логистикой с модулем управления водителями.
 
-## Структура проекта
-
-- `backend/` - NestJS backend приложение
-- `frontend/` - SolidJS frontend приложение
-- `supabase/` - Миграции и seed данные для Supabase
-- `docs/` - Документация проекта
-- `mcp-servers/` - MCP серверы для проекта
-- `scripts/` - Вспомогательные скрипты
-
-## Технологии
+## Быстрый старт
 
 ### Backend
-- NestJS
-- Prisma
-- TypeScript
-
-### Frontend
-- SolidJS
-- Vite
-- TailwindCSS
-
-## Установка
 
 ```bash
-# Установка зависимостей
-npm install
-
-# Запуск backend
 cd backend
+npm install
+# Создайте .env файл с DATABASE_URL
+npm run prisma:db:pull
+npm run prisma:generate
 npm run start:dev
+```
 
-# Запуск frontend
+### Frontend
+
+```bash
 cd frontend
+npm install
+# Создайте .env.local файл с NEXT_PUBLIC_API_URL=http://localhost:3000
 npm run dev
 ```
 
-## Документация
+Подробная документация в [docs/README.md](docs/README.md)
 
-Подробная документация находится в папке `docs/`.
